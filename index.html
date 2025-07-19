@@ -1,0 +1,745 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acceso exclusivo a la mejor plataforma de entretenimiento online con 200% extra en tu primer depósito. ¡Oferta por tiempo limitado!">
+    <meta property="og:title" content="Acceso VIP Exclusivo - 20% Bono en tu primer depósito">
+    <meta property="og:description" content="Plataforma VIP con las mejores oportunidades. ¡Regístrate ahora y obtén 200% EXTRA!">
+    <meta property="og:image" content="bonus.png">
+    <meta name="theme-color" content="#170027">
+    <title>🎰 Acceso VIP Exclusivo - 20% Bono Especial</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎰</text></svg>">
+    
+    <!-- Pixel de Meta (Facebook) - Actualizado con mejores prácticas -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1376244253444125'); 
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" 
+        src="https://www.facebook.com/tr?id=1376244253444125&ev=PageView&noscript=1"/>
+    </noscript>
+    
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+    
+    <!-- Precargar imágenes críticas -->
+    <link rel="preload" href="logo.png" as="image">
+    <link rel="preload" href="logo.PNG" as="image">
+    <link rel="preload" href="/api/fallback-logo" as="image">
+    <link rel="preload" href="logo_whatsapp.png" as="image">
+    
+    <style>
+        :root {
+            --primary-color: #ffbc00;
+            --secondary-color: #ff8c00;
+            --accent-color: #29D366;
+            --dark-bg: #450011;  /* Cambiado de #170027 a un tono bordo oscuro */
+            --glow-shadow: 0 5px 25px rgba(255,188,0,0.6);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        body {
+            background-color: #450011;  /* Cambiado de #170027 a tono bordo */
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('https://images.unsplash.com/photo-1606167668584-78701c57f13d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(105,0,25,0.85), rgba(69,0,17,0.95));  /* Cambiado a tonos bordo */
+            z-index: 1;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            width: 100%;
+            max-width: 100%;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            width: 220px;
+            height: 220px;
+            margin-bottom: 40px;
+            background: linear-gradient(145deg, #ffbc00, #ff8c00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 90px;
+            box-shadow: 0 5px 25px rgba(255,188,0,0.6);
+            animation: glow 2s infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            position: relative;
+            z-index: 2;
+            border-radius: 50%;
+            padding: 5px;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+        
+        h1 {
+            font-size: 38px;
+            margin-bottom: 30px;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.3;
+            font-weight: 800;
+        }
+        
+        .bonus-text {
+            color: var(--primary-color);
+            font-size: 52px;
+            display: block;
+            margin: 20px 0;
+            text-shadow: 0 2px 15px rgba(255,188,0,0.6);
+            letter-spacing: 1px;
+            transform: rotate(-2deg);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .bonus-text::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 3px;
+            z-index: -1;
+            opacity: 0.6;
+        }
+        
+        .call-to-action {
+            color: #fff;
+            font-size: 22px;
+            margin-top: 15px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+            animation: fadeInUp 1s ease-out;
+            background: rgba(0,0,0,0.2);
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .btn-whatsapp {
+            background: linear-gradient(to bottom right, #29D366, #128C7E);
+            color: white;
+            padding: 22px 45px;
+            font-size: 26px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+            font-weight: bold;
+            transition: all 0.4s;
+            border: none;
+            cursor: pointer;
+            animation: pulse 1.5s infinite, float 3s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
+        }
+        
+        .btn-whatsapp:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.7);
+        }
+        
+        .btn-whatsapp:after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(30deg);
+            animation: shineButton 3s infinite;
+        }
+        
+        .btn-whatsapp:active {
+            transform: scale(0.98);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+        
+        @keyframes shineButton {
+            0% { left: -60%; }
+            100% { left: 140%; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 5px 25px rgba(255,188,0,0.6); }
+            50% { box-shadow: 0 5px 35px rgba(255,188,0,0.9); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .limited-offer {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 59, 48, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 16px;
+            transform: rotate(5deg);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .bonus-image {
+            width: 180px;
+            height: auto;
+            margin: 20px 0;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 5px 15px rgba(255,188,0,0.4));
+            transition: transform 0.3s ease;
+        }
+        
+        .bonus-image:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 30px;
+            }
+            
+            .bonus-text {
+                font-size: 38px;
+                margin: 15px 0;
+            }
+            
+            .logo {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .btn-whatsapp {
+                padding: 20px 35px;
+                font-size: 22px;
+            }
+            
+            .call-to-action {
+                font-size: 18px;
+            }
+            
+            .limited-offer {
+                top: 10px;
+                right: 10px;
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+            
+            .bonus-image {
+                width: 140px;
+            }
+            
+            .whatsapp-icon {
+                width: 26px;
+                height: 26px;
+                margin-right: 10px;
+            }
+        }
+        
+        /* Para pantallas muy pequeñas (smartphones) */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+            
+            .bonus-text {
+                font-size: 32px;
+                margin: 10px 0;
+            }
+            
+            .logo {
+                width: 150px;
+                height: 150px;
+                font-size: 60px;
+                margin-bottom: 30px;
+            }
+            
+            .logo img {
+                width: 90%;
+                height: 90%;
+            }
+            
+            .btn-whatsapp {
+                padding: 18px 30px;
+                font-size: 20px;
+                width: 90%;
+                max-width: 300px;
+            }
+            
+            .call-to-action {
+                font-size: 16px;
+                padding: 8px 15px;
+            }
+            
+            .limited-offer {
+                top: 5px;
+                right: 5px;
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            
+            .bonus-image {
+                width: 120px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .whatsapp-icon {
+                width: 22px;
+                height: 22px;
+                margin-right: 8px;
+            }
+        }
+        
+        /* Asegurar orientación horizontal en dispositivos móviles */
+        @media (max-width: 900px) and (orientation: landscape) {
+            .container {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            
+            .logo {
+                width: 100px;
+                height: 100px;
+                font-size: 50px;
+                margin-bottom: 15px;
+            }
+            
+            h1 {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+            
+            .bonus-text {
+                font-size: 28px;
+                margin: 8px 0;
+            }
+            
+            .bonus-image {
+                width: 100px;
+                margin: 10px 0;
+            }
+            
+            .btn-whatsapp {
+                margin-top: 15px;
+                padding: 12px 25px;
+                font-size: 18px;
+            }
+            
+            .call-to-action {
+                font-size: 14px;
+            }
+            
+            .whatsapp-icon {
+                width: 20px;
+                height: 20px;
+                margin-right: 6px;
+            }
+        }
+        
+        /* Prevenir zoom no deseado en iOS */
+        @supports (-webkit-touch-callout: none) {
+            input, select, textarea, button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="limited-offer">¡OFERTA POR TIEMPO LIMITADO!</div>
+    <div class="logo" id="main-logo">
+        <!-- Intentar varias versiones de la ruta y api de fallback para asegurar que se cargue -->
+        <img src="logo.png" alt="Golden Casino" title="Golden Casino" 
+             onerror="this.onerror=null; 
+                     this.src='logo.PNG'; 
+                     console.log('Intentando cargar logo desde: logo.PNG');
+                     this.onerror=function(){
+                         console.log('Intentando cargar logo desde la API de fallback');
+                         this.src='/api/fallback-logo'; 
+                         this.onerror=function(){
+                             console.error('Todos los intentos de cargar el logo fallaron');
+                             let fallbackLogo = document.createElement('div');
+                             fallbackLogo.textContent = '🎰';
+                             fallbackLogo.style.fontSize = '90px';
+                             document.getElementById('main-logo').appendChild(fallbackLogo);
+                             this.style.display='none';
+                         }
+                     }"
+             onload="console.log('Logo cargado con éxito desde: ' + this.src);">
+    </div>
+    
+    <h1>
+        ACCESO VIP EXCLUSIVO
+        <span class="bonus-text">¡SUPER BONUS DE BIENVENIDA!</span>
+        <span class="call-to-action">ESCRIBINOS APRETANDO EL BOTÓN DE ABAJO</span>
+    </h1>
+    
+    <!-- Botón con ruta de imagen ajustada y manejo de errores -->
+    <a href="https://wa.link/5491125469875" class="btn-whatsapp" id="whatsapp-btn" target="_blank" aria-label="Obtener bono exclusivo por WhatsApp">
+        <img src="logo_whatsapp.png" alt="WhatsApp" class="whatsapp-icon" 
+             onerror="this.onerror=null; this.style.display='none'; console.error('Error cargando logo_whatsapp.png'); this.parentNode.innerHTML = '<span style=\'margin-right:10px;\'>💬</span>' + this.parentNode.innerHTML;">
+        OBTENER MI BONO AHORA
+    </a>
+</div>
+
+<script>
+    // Función para generar un ID único para eventos
+    function generateEventId() {
+        return 'event_' + Date.now() + '_' + Math.random().toString(36).substring(2, 10);
+    }
+
+    // Función mejorada para obtener valores de cookies con soporte para fallbacks
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return '';
+    }
+
+    // Función para validar si una respuesta HTTP es exitosa
+    function checkResponse(response) {
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
+        }
+        return response.json();
+    }
+
+    // Función para enviar evento a Facebook Conversions API - Optimizada y validada
+    function enviarEventoFacebook() {
+        try {
+            // Generar un ID único para este evento específico
+            const eventId = generateEventId();
+            console.log('🔍 Generando evento con ID:', eventId);
+            
+            // Registrar el evento con el pixel estándar usando el mismo ID para deduplicación
+            fbq('track', 'Lead', {
+                value: 1.00,
+                currency: 'USD'
+            }, {eventID: eventId});
+            console.log('✅ Evento enviado al Pixel de Facebook con ID:', eventId);
+
+            // Obtener fbp y fbc de cookies o localStorage con mejor fallback
+            const fbp = getCookie('_fbp') || '';
+            const fbc = getCookie('_fbc') || 
+                      getCookie('fbclid') || 
+                      new URL(window.location.href).searchParams.get('fbclid') || '';
+            
+            // Obtener URL completa para event_source_url
+            const eventSourceUrl = window.location.href;
+            
+            // Token de acceso actualizado
+            const ACCESS_TOKEN = 'EAATqZC2FPZC7cBPMXSeIS7mcVkVym5w8nSj0pxslKeKwVUZA7808wPCZBEaF1ARpVo4y2oqIoM6G28UDUO06wk2HHZBRTGgCHTV07ZCxkXn1WxfuSjVKM7lOMbJmidoD1fxSP9VCwC0paERWV3AVPgaI4XaTwHHUtb6cCDjSnzuYXhvqpyuOfXEvnRo8Jp2JEUagZDZD';
+            
+            // Modo de prueba - Este código debe coincidir con el que te dio Facebook
+            const TEST_MODE = true; // Cambiar a false en producción
+            const TEST_EVENT_CODE = 'TEST41610'; // Código correcto para pruebas
+            
+            // Preparar datos para el endpoint de conversiones
+            const eventData = {
+                fbp: fbp,
+                fbc: fbc,
+                event_id: eventId,
+                event_name: "Lead", // Cambiado a "Lead" para coincidir con el pixel
+                event_source_url: eventSourceUrl,
+                user_agent: navigator.userAgent,
+                event_time: Math.floor(Date.now() / 1000),
+                value: 1.00,
+                currency: 'USD',
+                access_token: ACCESS_TOKEN
+            };
+            
+            // Añadir test_event_code solo si estamos en modo prueba
+            if (TEST_MODE) {
+                eventData.test_event_code = TEST_EVENT_CODE;
+            }
+            
+            console.log('📤 Enviando datos a API de conversiones:', eventData);
+            
+            // Enviar evento a través de la ruta específica para Facebook Conversion API
+            return fetch('/api/facebook-conversion', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(eventData)
+            })
+            .then(checkResponse)
+            .then(data => {
+                console.log('✅ Evento de conversión registrado:', data);
+                
+                // También enviamos al endpoint general para mantener compatibilidad
+                return fetch('/api/sendEvent', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        eventName: 'Contactar', // Usar "Contactar" también aquí
+                        eventData: eventData
+                    })
+                });
+            })
+            .then(checkResponse)
+            .then(data => {
+                console.log('✅ Evento general registrado:', data);
+                return true; // Indicar éxito
+            })
+            .catch(error => {
+                console.error('❌ Error al registrar evento:', error);
+                return false; // Indicar error
+            });
+        } catch (e) {
+            console.error('❌ Error inesperado:', e);
+            return Promise.resolve(false);
+        }
+    }
+
+    // Agregar event listener al botón de WhatsApp con manejo de errores mejorado
+    document.addEventListener('DOMContentLoaded', function() {
+        const whatsappBtn = document.getElementById('whatsapp-btn');
+        
+        if (whatsappBtn) {
+            console.log('🔍 Botón de WhatsApp encontrado, configurando eventos');
+            
+            whatsappBtn.addEventListener('click', function(event) {
+                // Evitar que el link se abra inmediatamente
+                event.preventDefault();
+                
+                console.log('🖱️ Clic detectado en botón de WhatsApp');
+                
+                // Enviar el evento a Facebook y manejar la navegación
+                enviarEventoFacebook()
+                    .then(success => {
+                        console.log(`⏱️ Esperando antes de abrir WhatsApp (estado: ${success ? 'éxito' : 'error'})`);
+                        
+                        // Después de un pequeño retraso para asegurar que se envíe el evento, continuar con la navegación
+                        setTimeout(() => {
+                            console.log('➡️ Abriendo WhatsApp...');
+                            window.open(this.href, '_blank');
+                        }, 300);
+                    });
+            });
+            
+            // Efecto de feedback táctil al presionar el botón en móviles
+            whatsappBtn.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            }, {passive: true});
+            
+            whatsappBtn.addEventListener('touchend', function() {
+                this.style.transform = '';
+            }, {passive: true});
+        } else {
+            console.error('❌ No se encontró el botón de WhatsApp con ID: whatsapp-btn');
+        }
+    });
+    
+    // Script mejorado para verificar que las imágenes se carguen correctamente
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM cargado - verificando imágenes');
+        
+        // Intentar precargar todas las posibles variantes del logo
+        const logoPaths = ['logo.png', 'logo.PNG', '/logo.png', '/logo.PNG', './logo.png', './logo.PNG', '/api/fallback-logo'];
+        
+        // Función para intentar con diferentes rutas
+        function tryLoadLogo(index) {
+            if (index >= logoPaths.length) {
+                console.error('❌ No se pudo cargar el logo con ninguna ruta');
+                document.querySelector('.logo').innerHTML = '🎰';
+                return;
+            }
+            
+            const path = logoPaths[index];
+            console.log(`🔍 Intentando cargar logo desde: ${path}`);
+            
+            const img = new Image();
+            img.onload = function() {
+                console.log(`✅ Logo cargado con éxito desde: ${path}`);
+                const logoImg = document.querySelector('.logo img');
+                if (logoImg) {
+                    logoImg.src = path;
+                } else {
+                    const newImg = document.createElement('img');
+                    newImg.src = path;
+                    newImg.alt = "Golden Casino";
+                    newImg.title = "Golden Casino";
+                    document.getElementById('main-logo').innerHTML = '';
+                    document.getElementById('main-logo').appendChild(newImg);
+                }
+            };
+            img.onerror = function() {
+                console.log(`❌ Fallo al cargar logo desde: ${path}`);
+                // Intentar la siguiente ruta
+                tryLoadLogo(index + 1);
+            };
+            img.src = path;
+        }
+        
+        // Iniciar el proceso de carga
+        tryLoadLogo(0);
+    });
+    
+    // Escuchar evento de carga de la ventana para verificar imágenes finales
+    window.addEventListener('load', function() {
+        // Verificar el logo después de que todo se haya cargado
+        const logoImg = document.querySelector('.logo img');
+        
+        if (logoImg) {
+            // Comprobar si la imagen realmente se cargó
+            if (logoImg.complete) {
+                if (logoImg.naturalHeight === 0) {
+                    console.error('❌ Logo cargado pero con altura cero - posible error');
+                    document.querySelector('.logo').innerHTML = '🎰';
+                    
+                    // Agregar el logo de la imagen adjunta como solución de emergencia
+                    const emergencyLogo = document.createElement('img');
+                    emergencyLogo.src = 'data:image/png;base64,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';
+                    emergencyLogo.alt = "Mega Candy Casino";
+                    emergencyLogo.title = "Mega Candy Casino";
+                    document.querySelector('.logo').appendChild(emergencyLogo);
+                } else {
+                    console.log('✅ Logo verificado y cargado correctamente');
+                }
+            } else {
+                console.log('⚠️ Logo aún no ha completado la carga');
+            }
+        } else {
+            console.error('❌ No se encontró elemento de logo');
+        }
+        
+        // También verificar la imagen del logo de WhatsApp
+        const whatsappIcon = document.querySelector('.whatsapp-icon');
+        if (whatsappIcon && whatsappIcon.complete && whatsappIcon.naturalHeight === 0) {
+            console.error('❌ Ícono de WhatsApp no se cargó correctamente');
+            whatsappIcon.style.display = 'none';
+        } else if (whatsappIcon) {
+            console.log('✅ Ícono de WhatsApp cargado correctamente');
+        }
+    });
+    
+    // Ajustar altura en dispositivos móviles para viewport units
+    function setVH() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    
+    // Ejecutar al cargar y al cambiar tamaño
+    window.addEventListener('load', setVH);
+    window.addEventListener('resize', setVH);
+    
+    // Efecto de feedback táctil al presionar el botón en móviles
+    const whatsappBtn = document.getElementById('whatsapp-btn');
+    if (whatsappBtn) {
+        whatsappBtn.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.98)';
+        }, {passive: true});
+        
+        whatsappBtn.addEventListener('touchend', function() {
+            this.style.transform = '';
+        }, {passive: true});
+    }
+    
+    // Ya no es necesario este evento ya que el botón ahora es un enlace <a>
+    // con el evento onclick integrado directamente
+</script>
+</body>
+</html>
