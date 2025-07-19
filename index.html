@@ -509,89 +509,71 @@
 
     // Función para enviar evento a Facebook Conversions API - Optimizada y validada
     function enviarEventoFacebook() {
-        try {
-            // Generar un ID único para este evento específico
-            const eventId = generateEventId();
-            console.log('🔍 Generando evento con ID:', eventId);
-            
-            // Registrar el evento con el pixel estándar usando el mismo ID para deduplicación
-            fbq('track', 'Lead', {
-                value: 1.00,
-                currency: 'USD'
-            }, {eventID: eventId});
-            console.log('✅ Evento enviado al Pixel de Facebook con ID:', eventId);
+    try {
+        const eventId = generateEventId();
+        console.log('🔍 Generando evento con ID:', eventId);
 
-            // Obtener fbp y fbc de cookies o localStorage con mejor fallback
-            const fbp = getCookie('_fbp') || '';
-            const fbc = getCookie('_fbc') || 
-                      getCookie('fbclid') || 
-                      new URL(window.location.href).searchParams.get('fbclid') || '';
-            
-            // Obtener URL completa para event_source_url
-            const eventSourceUrl = window.location.href;
-            
-            // Token de acceso actualizado
-            const ACCESS_TOKEN = 'EAATqZC2FPZC7cBPMXSeIS7mcVkVym5w8nSj0pxslKeKwVUZA7808wPCZBEaF1ARpVo4y2oqIoM6G28UDUO06wk2HHZBRTGgCHTV07ZCxkXn1WxfuSjVKM7lOMbJmidoD1fxSP9VCwC0paERWV3AVPgaI4XaTwHHUtb6cCDjSnzuYXhvqpyuOfXEvnRo8Jp2JEUagZDZD';
-            
-            // Modo de prueba - Este código debe coincidir con el que te dio Facebook
-            const TEST_MODE = false; // Cambiar a false en producción
-            const TEST_EVENT_CODE = 'TEST41610'; // Código correcto para pruebas
-            
-            // Preparar datos para el endpoint de conversiones
-            const eventData = {
-                fbp: fbp,
-                fbc: fbc,
-                event_id: eventId,
-                event_name: "Lead", // Cambiado a "Lead" para coincidir con el pixel
-                event_source_url: eventSourceUrl,
-                user_agent: navigator.userAgent,
-                event_time: Math.floor(Date.now() / 1000),
-                value: 1.00,
-                currency: 'USD',
-                access_token: ACCESS_TOKEN
-            };
-            
-            // Añadir test_event_code solo si estamos en modo prueba
-            if (TEST_MODE) {
-                eventData.test_event_code = TEST_EVENT_CODE;
-            }
-            
-            console.log('📤 Enviando datos a API de conversiones:', eventData);
-            
-            // Enviar evento a través de la ruta específica para Facebook Conversion API
-            return fetch('/api/facebook-conversion', {
+        fbq('track', 'Lead', {
+            value: 1.00,
+            currency: 'USD'
+        }, { eventID: eventId });
+
+        const fbp = getCookie('_fbp') || '';
+        const fbc = getCookie('_fbc') || 
+                    getCookie('fbclid') || 
+                    new URL(window.location.href).searchParams.get('fbclid') || '';
+
+        const eventSourceUrl = window.location.href;
+
+        const eventData = {
+            fbp,
+            fbc,
+            event_id: eventId,
+            event_name: "Lead",
+            event_source_url: eventSourceUrl,
+            user_agent: navigator.userAgent,
+            event_time: Math.floor(Date.now() / 1000),
+            value: 1.00,
+            currency: 'USD',
+            // test_event_code: "TEST123" // Descomenta si estás en modo prueba
+        };
+
+        console.log('📤 Enviando datos a API backend:', eventData);
+
+        return fetch('/api/facebook-conversion', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(eventData)
+        })
+        .then(checkResponse)
+        .then(data => {
+            console.log('✅ Evento de conversión registrado:', data);
+
+            return fetch('/api/sendEvent', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(eventData)
-            })
-            .then(checkResponse)
-            .then(data => {
-                console.log('✅ Evento de conversión registrado:', data);
-                
-                // También enviamos al endpoint general para mantener compatibilidad
-                return fetch('/api/sendEvent', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        eventName: 'Contactar', // Usar "Contactar" también aquí
-                        eventData: eventData
-                    })
-                });
-            })
-            .then(checkResponse)
-            .then(data => {
-                console.log('✅ Evento general registrado:', data);
-                return true; // Indicar éxito
-            })
-            .catch(error => {
-                console.error('❌ Error al registrar evento:', error);
-                return false; // Indicar error
+                body: JSON.stringify({
+                    eventName: 'Contactar',
+                    eventData
+                })
             });
-        } catch (e) {
-            console.error('❌ Error inesperado:', e);
-            return Promise.resolve(false);
-        }
+        })
+        .then(checkResponse)
+        .then(data => {
+            console.log('✅ Evento general registrado:', data);
+            return true;
+        })
+        .catch(error => {
+            console.error('❌ Error al registrar evento:', error);
+            return false;
+        });
+
+    } catch (e) {
+        console.error('❌ Error inesperado:', e);
+        return Promise.resolve(false);
     }
+}
+
 
     // Agregar event listener al botón de WhatsApp con manejo de errores mejorado
     document.addEventListener('DOMContentLoaded', function() {
